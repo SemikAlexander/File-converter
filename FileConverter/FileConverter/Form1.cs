@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SautinSoft.Document;
 
 namespace FileConverter
 {
@@ -20,11 +14,9 @@ namespace FileConverter
 
         string FormatFile = "", ConvertFormatFile = "", fileToConvert = "", convertFile = "";
         string[] fileFormats = { ".txt", ".docx", ".doc", ".pdf", ".html", ".odt" };
-        Converter converter;
         public Form1()
         {
             InitializeComponent();
-            converter = new Converter();
             openFileDialog1.Filter = "(*.txt)|*.txt|(*.doc)|*.doc|(*.docx)|*.docx|(*.pdf)|*.pdf|(*.html)|*.html|(*.odt)|*.odt";
             saveFileDialog1.Filter = "(*.txt)|*.txt|(*.doc)|*.doc|(*.docx)|*.docx|(*.pdf)|*.pdf|(*.html)|*.html|(*.odt)|*.odt";
         }
@@ -54,7 +46,7 @@ namespace FileConverter
         {
             if(!string.IsNullOrWhiteSpace(FilePath.Text) | !string.IsNullOrWhiteSpace(ConvertFilePath.Text))
             {
-                if (!converter.ConvertFile(fileToConvert, convertFile))
+                if (!ConvertFile(fileToConvert, convertFile))
                 {
                     MessageBox.Show("Something go wrong...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -71,7 +63,6 @@ namespace FileConverter
                 return;
             }
         }
-
         private void browseFiles_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -87,7 +78,6 @@ namespace FileConverter
                 }
             }
         }
-
         private void SaveFile_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -101,6 +91,19 @@ namespace FileConverter
                     ConvertFormatFile = fileFormats[i];
                     break;
                 }
+            }
+        }
+        public bool ConvertFile(string sourceFile, string convertFile)
+        {
+            try
+            {
+                DocumentCore documentCore = DocumentCore.Load(sourceFile);
+                documentCore.Save(convertFile);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }
