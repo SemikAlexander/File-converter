@@ -1,0 +1,13 @@
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\bin\Debug\FileConverter.exe.config
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\bin\Debug\FileConverter.exe
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\bin\Debug\FileConverter.pdb
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.Form1.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.exe
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.pdb
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\obj\Debug\FileConverter.csproj.CopyComplete
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\bin\Debug\SautinSoft.Document.dll
+C:\Users\Admin\Documents\Visual Studio 2019\Projects\FileConverter\FileConverter\bin\Debug\SautinSoft.Document.xml
