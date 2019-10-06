@@ -19,7 +19,7 @@ namespace FileConverter
         private extern static void SendMessage(IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         string FormatFile = "", ConvertFormatFile = "", fileToConvert = "", convertFile = "";
-        string[] fileFormats = { ".txt", ".doc", ".docx", ".pdf", ".html", ".odt" };
+        string[] fileFormats = { ".txt", ".docx", ".doc", ".pdf", ".html", ".odt" };
         Converter converter;
         public Form1()
         {
@@ -54,7 +54,16 @@ namespace FileConverter
         {
             if(!string.IsNullOrWhiteSpace(FilePath.Text) | !string.IsNullOrWhiteSpace(ConvertFilePath.Text))
             {
-                converter.StartConvert(FormatFile, ConvertFormatFile, fileToConvert, convertFile);
+                if (!converter.ConvertFile(fileToConvert, convertFile))
+                {
+                    MessageBox.Show("Something go wrong...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Convert finished well!", "Finished", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    FilePath.Text = ConvertFilePath.Text = "";
+                }
             }
             else
             {
